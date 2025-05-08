@@ -1,7 +1,9 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
@@ -12,6 +14,7 @@ public class ValidacoesTest {
         Validacoes validacoes = new Validacoes();
         assertNotNull(validacoes);
     }
+
     @Test
     void testEmailValidoComArroba() {
         assertTrue(Validacoes.emailValido("teste@email.com"));
@@ -33,7 +36,7 @@ public class ValidacoesTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"senhafraca", "SENHAFRACA", "1234567", "SenhaSemNumero"})
+    @ValueSource(strings = {"senhaminuscula", "SENHAMAIUSCULA", "1234567", "SenhaSemNumero"})
     void testSenhaFraca(String senha) {
         assertFalse(Validacoes.senhaForte(senha));
     }

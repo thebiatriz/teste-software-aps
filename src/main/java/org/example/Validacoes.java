@@ -1,4 +1,3 @@
-
 package org.example;
 
 public class Validacoes {
@@ -9,9 +8,9 @@ public class Validacoes {
     public static boolean senhaForte(String senha) {
         if (senha == null) return false;
         return senha.length() >= 8 &&
-               senha.chars().anyMatch(Character::isUpperCase) &&
-               senha.chars().anyMatch(Character::isLowerCase) &&
-               senha.chars().anyMatch(Character::isDigit);
+                senha.chars().anyMatch(Character::isUpperCase) &&
+                senha.chars().anyMatch(Character::isLowerCase) &&
+                senha.chars().anyMatch(Character::isDigit);
     }
 
     public static boolean nomeValido(String nome) {
